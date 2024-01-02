@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
         gameArea.innerHTML = '';
         trashcans = [];
 
-        const containerSizePercent = 10;
+        const containerSizePercent = 20;
         // Assign buttons to random trashcans
         for (let i = 0; i < TOTAL_BUTTONS; i++) {
             let pos;
