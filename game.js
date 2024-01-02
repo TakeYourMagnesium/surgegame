@@ -61,6 +61,8 @@ document.addEventListener('DOMContentLoaded', () => {
             positions[pos] = true;
         }
 
+
+        const maxAttempts = 200;
         for (let i = 0; i < TOTAL_TRASHCANS; i++) {
             const trashcan = document.createElement('div');
             trashcan.classList.add('trashcan');
@@ -69,6 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
             container.classList.add('container');
 
             let xPercent, yPercent, overlap;
+            let attempts = 0;
 
             do {
                 overlap = false;
@@ -86,6 +89,10 @@ document.addEventListener('DOMContentLoaded', () => {
                         overlap = true;
                     }
                 });
+                if (attempts++ > maxAttempts) {
+                    console.log('Max attempts break');
+                    break;
+                }
             } while (overlap);
 
                 container.style.left = `${xPercent}%`;
@@ -147,7 +154,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (clicks === 2) {
             setTimeout(() => {
                 if (foundButtons === 2) {
-                    alert("You won!");
+                    alert("You won! #026 is the answer! (which is Raichu's pokedex #!)");
                 } else {
                     alert("Try again!");
                 }
