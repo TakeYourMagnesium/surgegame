@@ -1,6 +1,6 @@
 .trashcan {
-    width: 20vw;
-    height: 20vw;
+    width: 8.5vw;
+    height: 8.5vw;
     margin: 5px;
     background-image: url('trashcan.jpg');
     background-size: cover;
@@ -11,8 +11,8 @@
 
 .container {
     position: absolute;
-    width: 20vw;
-    height: 20vw;
+    width: 8.5vw;
+    height: 8.5vw;
 }
 
 .button {
