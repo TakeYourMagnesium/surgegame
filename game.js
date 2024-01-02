@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const foundButtonsDisplay = document.createElement('div');
     let positions = new Array(TOTAL_TRASHCANS).fill(false);
     let buttons = [];
+    let lastClickedButton = null;
 
 
     /*function positionTrashcans() {
@@ -133,7 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (clickedElement.classList.contains('trashcan')) {
 
         trashcan.style.visibility = 'hidden';
-        const trashcanIndex = trashcans.indexOf(trashcan);
+        //const trashcanIndex = trashcans.indexOf(trashcan);
         //if (positions[trashcanIndex]) {
           //  const button = buttons[trashcanIndex];
             //button.style.display = 'block'; // Reveal the button
@@ -144,18 +145,23 @@ document.addEventListener('DOMContentLoaded', () => {
                 button.style.display = 'block';
             }
         }
+
+
         // Reveal the trashcan's state
         //trashcan.style.backgroundColor = trashcan.dataset.hasButton === 'true' ? 'red' : 'transparent';
-        foundButtons += trashcan.dataset.hasButton === 'true' ? 1 : 0;
+        if (lastClickedButton !== trashcan) {
+            foundButtons += trashcan.dataset.hasButton === 'true' ? 1 : 0;
+        }
         clicks++;
         updateDisplays();
-        
+        lastClickedButton = trashcan;
         // Check and reset the round after two clicks
         if (clicks === 2) {
             setTimeout(() => {
                 if (foundButtons === 2) {
                     alert("You won! #026 is the answer! (which is Raichu's pokedex #!)");
                 } else {
+                    lastClickedButton = null;
                     alert("Try again!");
                 }
                 resetRound();
