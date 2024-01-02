@@ -1,0 +1,53 @@
+.trashcan {
+    width: 5vw;
+    height: 5vw;
+    margin: 5px;
+    background-image: url('trashcan.jpg');
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    cursor: pointer;
+}
+
+.button-container {
+    width: 5vw;
+    height: 5vw;
+    margin: 5px;
+    background-color: white;
+    position: absolute; /* Position the container absolutely */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.container {
+    position: absolute;
+    width: 5vw;
+    height: 5vw;
+}
+
+.button {
+    width: 3.5vw;
+    height: 3.5vw;
+    background-image: url('button.png');
+    background-size: cover;
+    position: absolute; /* Position the button absolutely within the container */
+    top: 0;
+    left: 2;
+    right: 0;
+    bottom: 0;
+    margin: auto; /* Center the button */
+    display: none; /* Initially hidden */
+}
+#gameArea {
+    position: relative;
+    height: 90vh;
+    width: 90vw;
+}
+@media (max-width: 600px) { /* Example for screens narrower than 600px */
+    .trashcan {
+    width: 10vw;
+    height: 10vw;
+    }   
+}
