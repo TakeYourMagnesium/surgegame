@@ -13,6 +13,12 @@ document.addEventListener('DOMContentLoaded', () => {
     let buttons = [];
     let lastClickedButton = null;
 
+    function adjustHeight() {
+        const gameArea = document.getElementById('gameArea');
+        gameArea.style.height = window.innerHeight + 'px';
+    }
+
+    adjustHeight();
 
     /*function positionTrashcans() {
     const areaWidth = gameArea.clientWidth;
@@ -188,7 +194,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
         updateDisplays();
     }
-
+    window.addEventListener('resize', adjustHeight);
     resetButton.addEventListener('click', initializeGame);
     gameArea.before(clicksDisplay, foundButtonsDisplay);
     initializeGame();

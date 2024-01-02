@@ -1,6 +1,6 @@
 .trashcan {
-    width: 7vh;
-    height: 7vh;
+    width: 5vh;
+    height: 5vh;
     margin: 5px;
     background-image: url('trashcan.png');
     background-size: cover;
@@ -11,13 +11,13 @@
 
 .container {
     position: absolute;
-    width: 7vh;
-    height: 7vh;
+    width: 5vh;
+    height: 5vh;
 }
 
 .button {
-    width: 5vh;
-    height: 5vh;
+    width: 3vh;
+    height: 3vh;
     background-image: url('button.png');
     background-size: cover;
     position: absolute; /* Position the button absolutely within the container */
