@@ -1,6 +1,6 @@
 .trashcan {
-    width: 5vh;
-    height: 5vh;
+    width: 6vh;
+    height: 6vh;
     margin: 5px;
     background-image: url('trashcan.png');
     background-size: cover;
@@ -11,8 +11,8 @@
 
 .container {
     position: absolute;
-    width: 5vh;
-    height: 5vh;
+    width: 6vh;
+    height: 6vh;
 }
 
 .button {
@@ -22,7 +22,7 @@
     background-size: cover;
     position: absolute; /* Position the button absolutely within the container */
     top: 0;
-    left: 0;
+    left: 1;
     right: 0;
     bottom: 0;
     margin: auto; /* Center the button */
@@ -37,8 +37,8 @@
 }
 @media (max-width: 600px) { /* Example for screens narrower than 600px */
     .trashcan {
-    width: 8vh;
-    height: 8vh;
+    width: 7vh;
+    height: 7vh;
     }
     
     .game-message {

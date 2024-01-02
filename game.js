@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
         gameArea.innerHTML = '';
         trashcans = [];
 
-        const containerSizePercent = 8.5;
+        const trashcanSizeVH = window.innerWidth <= 600 ? 6 : 5;
         // Assign buttons to random trashcans
         for (let i = 0; i < TOTAL_BUTTONS; i++) {
             let pos;
@@ -82,17 +82,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
             do {
                 overlap = false;
-                const gameAreaRect = gameArea.getBoundingClientRect();
-                const maxXPercent = (gameAreaRect.width - (containerSizePercent * window.innerWidth / 100)) / window.innerWidth * 100;
-                const maxYPercent = (gameAreaRect.height - (containerSizePercent * window.innerWidth / 100)) / window.innerHeight * 100;
-                xPercent = Math.random() * (maxXPercent); // Subtract to prevent overflow
-                yPercent = Math.random() * (maxYPercent); // Subtract to prevent overflow
+                //const gameAreaRect = gameArea.getBoundingClientRect();
+                //const maxXPercent = (gameAreaRect.width - (trashcanSizeVH * window.innerWidth / 100)) / window.innerWidth * 100;
+                //const maxYPercent = (gameAreaRect.height - (trashcanSizeVH * window.innerWidth / 100)) / window.innerHeight * 100;
+                xPercent = (Math.random() * (100 - (2.5* trashcanSizeVH))) + trashcanSizeVH;
+                yPercent = (Math.random() * (100 - (2 * trashcanSizeVH))) + trashcanSizeVH;
+                
                 
                 containers.forEach(other => {
                     const otherX = parseFloat(other.style.left);
                     const otherY = parseFloat(other.style.top);
-                    if (Math.abs(xPercent - otherX) < containerSizePercent *2 && 
-                        Math.abs(yPercent - otherY) < containerSizePercent *2) {
+                    if (Math.abs(xPercent - otherX) < trashcanSizeVH *1.5 && 
+                        Math.abs(yPercent - otherY) < trashcanSizeVH *1.5) {
                         overlap = true;
                     }
                 });
