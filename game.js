@@ -59,6 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
         trashcans = [];
 
         const trashcanSizeVH = window.innerWidth <= 600 ? 6 : 5;
+        let trashcanSizePx = (trashcanSizeVH / 100) * window.innerHeight;
         // Assign buttons to random trashcans
         for (let i = 0; i < TOTAL_BUTTONS; i++) {
             let pos;
@@ -85,9 +86,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 //const gameAreaRect = gameArea.getBoundingClientRect();
                 //const maxXPercent = (gameAreaRect.width - (trashcanSizeVH * window.innerWidth / 100)) / window.innerWidth * 100;
                 //const maxYPercent = (gameAreaRect.height - (trashcanSizeVH * window.innerWidth / 100)) / window.innerHeight * 100;
-                xPercent = (Math.random() * (100 - (2.5* trashcanSizeVH))) + trashcanSizeVH;
-                yPercent = (Math.random() * (100 - (2 * trashcanSizeVH))) + trashcanSizeVH;
-                
+                const xPositionPx = Math.random() * (window.innerWidth - trashcanSizePx);
+                const yPositionPx = Math.random() * (window.innerHeight - trashcanSizePx);
+                xPercent = (xPositionPx / window.innerWidth) *100;
+                //yPercent = (Math.random() * (100 - (2 * trashcanSizeVH))) + trashcanSizeVH;
+                 yPercent = (yPositionPx / window.innerHeight) * 100;
                 
                 containers.forEach(other => {
                     const otherX = parseFloat(other.style.left);
