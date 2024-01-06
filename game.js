@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const TOTAL_TRASHCANS = 15;
+    const TOTAL_TRASHCANS = 20;
     const TOTAL_BUTTONS = 2;
     let trashcans = [];
     let containers = [];
